@@ -22,8 +22,7 @@ swift-src/test_opus
 *.log.*
 macmic_runtime.log
 
-# Proprietary / Original binaries & extraction artifacts
-extracted/
+
 *.exe
 *.dll
 *.iso
@@ -44,7 +43,6 @@ venv/
 test_*.py
 scratch/
 
-# Reverse-engineering binaries (APK, Windows installer)
 android/
 windows/
 
