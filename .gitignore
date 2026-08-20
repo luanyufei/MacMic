@@ -9,9 +9,7 @@
 # Build outputs & binaries
 *.app/
 MacMic.app/
-WOMic.app/
 MacMic_bin
-WOMic_bin
 launcher
 *.o
 *.a

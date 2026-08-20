@@ -72,7 +72,7 @@ public final class AppViewModel: ObservableObject {
     @Published public var connectionState: ConnectionState = .disconnected
 
     public let audioEngine: AudioEngine
-    public let client: WOMicClient
+    public let client: MacMicClient
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -88,7 +88,7 @@ public final class AppViewModel: ObservableObject {
         let engine = AudioEngine()
         engine.gain = Float(savedGain / 100.0)
         self.audioEngine = engine
-        self.client = WOMicClient(audioEngine: engine)
+        self.client = MacMicClient(audioEngine: engine)
 
         // Bind AudioEngine VU Level directly to AppViewModel
         engine.$vuLevel

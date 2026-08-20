@@ -1,18 +1,18 @@
 """
-WO Mic CLI Client for macOS (Apple Silicon arm64).
+MacMic CLI Client for macOS (Apple Silicon arm64).
 Usage:
-    python3 womic_cli.py --wifi 192.168.1.100
-    python3 womic_cli.py --usb
-    python3 womic_cli.py --list-devices
+    python3 macmic_cli.py --wifi 192.168.1.100
+    python3 macmic_cli.py --usb
+    python3 macmic_cli.py --list-devices
 """
 
 import argparse
 import sys
 import time
 import signal
-from womic_protocol import WOMicClient, ConnectionState
-from womic_audio import AudioOutputEngine
-from womic_adb import ADBManager
+from macmic_protocol import MacMicClient, ConnectionState
+from macmic_audio import AudioOutputEngine
+from macmic_adb import ADBManager
 
 
 def main():
@@ -69,7 +69,7 @@ def main():
     def on_state(state, detail):
         print(f"[{state}] {detail}")
 
-    client = WOMicClient(
+    client = MacMicClient(
         host=host,
         control_port=8125,
         media_port=8125,

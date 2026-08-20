@@ -1,6 +1,6 @@
 """
-WO Mic Protocol Implementation for macOS.
-Reverse-engineered from WO Mic Client 6.3.
+MacMic Protocol Implementation for macOS.
+Compatible with the WO Mic mobile app protocol.
 Handles TCP control commands (handshake, codec params, audio capture) and UDP/TCP media streaming.
 """
 
@@ -9,11 +9,11 @@ import struct
 import threading
 import time
 from typing import Callable, Optional
-from womic_opus import OpusDecoder
-from womic_audio import AudioOutputEngine
+from macmic_opus import OpusDecoder
+from macmic_audio import AudioOutputEngine
 
 
-# Protocol Constants (Reverse Engineered from WOMicClient.exe)
+# Protocol Constants (Reverse Engineered from WOMicClient protocol)
 PROTOCOL_VERSION_V4 = 4
 CLIENT_MAJOR = 6
 CLIENT_MINOR = 3
@@ -46,9 +46,9 @@ class ConnectionState:
     ERROR = "Error"
 
 
-class WOMicClient:
+class MacMicClient:
     """
-    Full WO Mic Client implementation for macOS.
+    MacMic Client implementation for macOS.
     """
 
     def __init__(

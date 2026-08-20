@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     snprintf(resources_dir, sizeof(resources_dir), "%s/../Resources", dir);
 
     char script_path[PATH_MAX];
-    snprintf(script_path, sizeof(script_path), "%s/womic_gui.py", resources_dir);
+    snprintf(script_path, sizeof(script_path), "%s/macmic_gui.py", resources_dir);
 
     // Change working directory to Resources
     chdir(resources_dir);
@@ -66,6 +66,6 @@ int main(int argc, char *argv[]) {
     // Fallback to execvp
     execvp(python_bin, new_argv);
 
-    perror("Failed to launch WOMic");
+    perror("Failed to launch MacMic");
     return 1;
 }

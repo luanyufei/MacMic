@@ -131,7 +131,7 @@ swift-src/
 ├── main.swift                 # Application entrypoint & window styling
 ├── ContentView.swift          # SwiftUI interface & VU meter rendering
 ├── ViewModel.swift            # State management & event dispatching
-├── WOMicClient.swift          # Communication protocol implementation
+├── MacMicClient.swift         # Communication protocol implementation
 ├── AudioEngine.swift          # CoreAudio / AudioQueue output engine
 ├── OpusDecoder.swift          # C libopus decoding wrapper
 ├── AudioDeviceManager.swift   # macOS audio device enumeration

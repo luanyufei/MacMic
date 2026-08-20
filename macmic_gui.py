@@ -1,5 +1,5 @@
 """
-WO Mic GUI Client for macOS (Apple Silicon arm64 Native).
+MacMic GUI Client for macOS (Apple Silicon arm64 Native).
 Modern, elegant interface styled with native macOS aesthetics.
 Supports Wi-Fi, USB (ADB), Wi-Fi Direct, dynamic VU level meter, gain slider, and device routing.
 """
@@ -10,15 +10,15 @@ import threading
 import time
 import socket
 
-from womic_protocol import WOMicClient, ConnectionState, DEFAULT_CONTROL_PORT, DEFAULT_MEDIA_PORT
-from womic_audio import AudioOutputEngine
-from womic_adb import ADBManager
+from macmic_protocol import MacMicClient, ConnectionState, DEFAULT_CONTROL_PORT, DEFAULT_MEDIA_PORT
+from macmic_audio import AudioOutputEngine
+from macmic_adb import ADBManager
 
 
-class ModernWOMicApp:
+class ModernMacMicApp:
     def __init__(self, root: tk.Tk):
         self.root = root
-        self.root.title("WO Mic for Mac (Apple Silicon)")
+        self.root.title("MacMic (Apple Silicon)")
         self.root.geometry("480x640")
         self.root.minsize(440, 580)
         self.root.configure(bg="#1E1E24")
@@ -332,36 +332,36 @@ class ModernWOMicApp:
             return
 
         # Prepare client
-        self.client = WOMicClient(
+        self.client = MacMicClient(
             host=host,
             control_port=DEFAULT_CONTROL_PORT,
             media_port=DEFAULT_MEDIA_PORT,
             is_tcp_media=is_tcp,
             audio_engine=self.audio_engine,
-            on_state_change=self.on_state_change
+            on_state_change=self.on_connection_state_change
         )
-
-        def run():
-            self.client.connect()
-
-        threading.Thread(target=run, daemon=True).start()
+        self.client.connect()
 
     def disconnect(self):
         if self.client:
             self.client.disconnect()
             self.client = None
-        self._handle_state_update(ConnectionState.DISCONNECTED, "")
-
-    def on_close(self):
-        self.meter_running = False
-        self.disconnect()
         self.audio_engine.stop()
+        self.is_connected = False
+        self.status_var.set("Disconnected")
+        self.btn_connect.config(text="Connect", bg="#0A84FF")
+        self.lbl_status_icon.config(text="⚪")
+
+    def on_closing(self):
+        self.disconnect()
+        self.meter_running = False
         self.root.destroy()
 
 
 def main():
     root = tk.Tk()
-    app = ModernWOMicApp(root)
+    app = ModernMacMicApp(root)
+    root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
 
 

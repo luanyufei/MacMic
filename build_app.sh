@@ -9,7 +9,7 @@ MACOS="$CONTENTS/MacOS"
 RESOURCES="$CONTENTS/Resources"
 
 # 1. Clean previous build
-rm -rf "$APP_NAME" MacMic_bin WOMic.app
+rm -rf "$APP_NAME" MacMic_bin
 mkdir -p "$MACOS" "$RESOURCES"
 
 # 2. Compile Pure Swift Application into arm64 native Mach-O binary
@@ -21,7 +21,7 @@ swiftc -sdk $(xcrun --show-sdk-path) -target arm64-apple-macos12.0 -parse-as-lib
     swift-src/AudioDeviceManager.swift \
     swift-src/AudioEngine.swift \
     swift-src/ADBHelper.swift \
-    swift-src/WOMicClient.swift \
+    swift-src/MacMicClient.swift \
     swift-src/Localization.swift \
     swift-src/LaunchAtLoginHelper.swift \
     swift-src/SettingsView.swift \

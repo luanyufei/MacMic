@@ -133,7 +133,7 @@ swift-src/
 ├── main.swift                 # 程序入口与窗口样式控制
 ├── ContentView.swift          # SwiftUI 界面与电平绘制
 ├── ViewModel.swift            # 状态驱动与事件分发
-├── WOMicClient.swift          # 核心通信协议实现
+├── MacMicClient.swift         # 核心通信协议实现
 ├── AudioEngine.swift          # CoreAudio / AudioQueue 播放引擎
 ├── OpusDecoder.swift          # C-Opus 解码桥接封装
 ├── AudioDeviceManager.swift   # macOS 系统音频输出设备枚举

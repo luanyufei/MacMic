@@ -9,7 +9,7 @@ public enum ConnectionState: Equatable {
     case error(String)
 }
 
-public final class WOMicClient: ObservableObject {
+public final class MacMicClient: ObservableObject {
     @Published public var state: ConnectionState = .disconnected
     @Published public var packetsReceived: Int = 0
     @Published public var bytesReceived: Int = 0
@@ -26,8 +26,8 @@ public final class WOMicClient: ObservableObject {
     private var udpSocketFd: Int32 = -1
     private var serverSockAddr = sockaddr_in()
 
-    private let workerQueue = DispatchQueue(label: "com.womic.client.worker", qos: .userInteractive)
-    private let pollQueue = DispatchQueue(label: "com.womic.client.poll", qos: .utility)
+    private let workerQueue = DispatchQueue(label: "com.macmic.client.worker", qos: .userInteractive)
+    private let pollQueue = DispatchQueue(label: "com.macmic.client.poll", qos: .utility)
 
     private var totalPktsCount = 0
     private var totalBytesCount = 0

@@ -52,7 +52,7 @@ standPole.stroke()
 img.unlockFocus()
 
 let fm = FileManager.default
-try? fm.createDirectory(atPath: "WOMic.iconset", withIntermediateDirectories: true)
+try? fm.createDirectory(atPath: "MacMic.iconset", withIntermediateDirectories: true)
 
 let sizes = [16, 32, 64, 128, 256, 512]
 for s in sizes {
@@ -63,7 +63,7 @@ for s in sizes {
     img.draw(in: NSRect(x: 0, y: 0, width: s, height: s), from: NSRect(x: 0, y: 0, width: size, height: size), operation: .copy, fraction: 1.0)
     NSGraphicsContext.restoreGraphicsState()
     if let data = rep.representation(using: .png, properties: [:]) {
-        try? data.write(to: URL(fileURLWithPath: "WOMic.iconset/icon_\(s)x\(s).png"))
+        try? data.write(to: URL(fileURLWithPath: "MacMic.iconset/icon_\(s)x\(s).png"))
     }
     
     if s <= 256 {
@@ -75,7 +75,7 @@ for s in sizes {
         img.draw(in: NSRect(x: 0, y: 0, width: s2, height: s2), from: NSRect(x: 0, y: 0, width: size, height: size), operation: .copy, fraction: 1.0)
         NSGraphicsContext.restoreGraphicsState()
         if let data2 = rep2.representation(using: .png, properties: [:]) {
-            try? data2.write(to: URL(fileURLWithPath: "WOMic.iconset/icon_\(s)x\(s)@2x.png"))
+            try? data2.write(to: URL(fileURLWithPath: "MacMic.iconset/icon_\(s)x\(s)@2x.png"))
         }
     }
 }
