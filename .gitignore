@@ -61,3 +61,7 @@ windows/
 DerivedData/
 *.xcuserstate
 xcuserdata/
+
+# Agent / AI local instructions
+AGENTS.md
+
