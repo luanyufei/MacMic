@@ -30,12 +30,28 @@ MacMic directly implements low-level network communication and CoreAudio pipelin
 
 - **Three Connection Modes**:
   - **Wi-Fi**: Wireless connection over local network (supports iOS & Android).
-  - **USB (ADB)**：Plug in Android phone for automatic ADB port forwarding with ultra-low latency.
+  - **USB (ADB)**: Plug in Android phone for automatic ADB port forwarding with ultra-low latency.
   - **Wi-Fi Direct**: Direct hotspot connection.
 - **Audio Routing & Processing**:
   - Auto-detects and outputs audio into **BlackHole 2ch** virtual microphone.
   - Real-time logarithmic dB VU meter.
   - 0% to 300% gain adjustment and one-click mute.
+- **Internationalization (9 Languages Supported)** 🌐:
+  - Full native i18n support with instant dynamic switching:
+    - 🇨🇳 **简体中文** (Simplified Chinese)
+    - 🇭🇰 **繁體中文** (Traditional Chinese)
+    - 🇺🇸 **English**
+    - 🇯🇵 **日本語** (Japanese)
+    - 🇰🇷 **한국어** (Korean)
+    - 🇪🇸 **Español** (Spanish)
+    - 🇫🇷 **Français** (French)
+    - 🇷🇺 **Русский** (Russian)
+    - 🇩🇪 **Deutsch** (German)
+  - Automatically matches macOS system language or customizes in Preferences.
+- **macOS Native Integration**:
+  - Menu Bar resident mode with quick status popover controls.
+  - Supports Light, Dark, and System appearance themes.
+  - Launch at Login option (powered by Apple's `SMAppService`).
 - **Native & Lightweight**: Single standalone binary without background daemons.
 
 ---
