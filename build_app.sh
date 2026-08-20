@@ -33,6 +33,7 @@ swiftc -sdk $(xcrun --show-sdk-path) -target arm64-apple-macos12.0 -parse-as-lib
     -framework AppKit \
     -framework CoreAudio \
     -framework AudioToolbox \
+    -framework AVFoundation \
     -framework Network \
     -framework ServiceManagement \
     -o "$MACOS/MacMic"
@@ -50,6 +51,8 @@ cat << 'PLIST' > "$CONTENTS/Info.plist"
 <dict>
     <key>CFBundleDevelopmentRegion</key>
     <string>zh_CN</string>
+    <key>CFBundleDisplayName</key>
+    <string>MacMic</string>
     <key>CFBundleExecutable</key>
     <string>MacMic</string>
     <key>CFBundleIconFile</key>
@@ -72,6 +75,8 @@ cat << 'PLIST' > "$CONTENTS/Info.plist"
     <true/>
     <key>NSMicrophoneUsageDescription</key>
     <string>MacMic 需要访问音频子系统以将手机音频实时路由为虚拟麦克风信号</string>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>MacMic 需要访问局域网以发现并连接手机端音频串流服务</string>
 </dict>
 </plist>
 PLIST

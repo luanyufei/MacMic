@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import AVFoundation
 
 public enum TransportMode: String, CaseIterable, Identifiable {
     case wifi = "Wi-Fi"
@@ -171,6 +172,9 @@ public final class AppViewModel: ObservableObject {
                 ADBHelper.removeForward(localPort: 8125)
             }
         } else {
+            // Prompt macOS Microphone Access Permission Dialog if not granted
+            AVCaptureDevice.requestAccess(for: .audio) { _ in }
+
             if let dev = selectedDevice {
                 audioEngine.currentDevice = dev
             }
