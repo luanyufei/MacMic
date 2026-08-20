@@ -5,7 +5,7 @@
 **MacMic** 是一款专为 Apple Silicon 芯片打造的非官方 macOS 原生音频客户端，兼容 WO Mic 通信协议。软件基于纯 Swift 与 SwiftUI 编写，具备体积小巧、冷启动迅速的特点，配合 BlackHole 驱动可将 iPhone 或 Android 手机作为 Mac 的无线或有线麦克风使用。
 
 > **📌 架构说明**  
-> 当前预编译程序包仅支持 **Apple Silicon (M1/M2/M3/M4 系列芯片)**。如果您使用的是 Intel 芯片的 Mac 并需要 Intel 版本，请随时联系作者或提交议题。
+> 当前预编译程序包仅支持 **Apple Silicon (M1/M2/M3/M4 系列芯片)**。如果您使用的是 Intel 芯片的 Mac 并需要 Intel 版本，请随时联系作者或提交 issue。
 
 > **💻 Windows 用户说明**  
 > 本项目**不会**提供 Windows 版本。Windows 用户请支持并使用 Wolicheng Tech 开发的官方原版软件：[https://wolicheng.com/womic/](https://wolicheng.com/womic/)。
@@ -86,7 +86,7 @@ brew install blackhole-2ch
 
 ### 3. Mac 客户端操作与连接
 
-1. 下载发布页面中的 `MacMic.app` 移至应用程序目录，双击打开。
+1. 下载 release 页面中的 `MacMic.app` 移至应用程序目录，双击打开。
 2. 在 **音频输出目标** 下拉菜单中，选择 **`BlackHole 2ch [虚拟麦克风]`**：
    
    ![MacMic 客户端主界面](assets/main_ui.png)
