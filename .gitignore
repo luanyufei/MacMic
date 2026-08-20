@@ -1,0 +1,63 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Build outputs & binaries
+*.app/
+MacMic.app/
+WOMic.app/
+MacMic_bin
+WOMic_bin
+launcher
+*.o
+*.a
+*.dylib
+*.dSYM/
+swift-src/test_opus
+
+# Logs
+*.log
+*.log.*
+macmic_runtime.log
+
+# Proprietary / Original binaries & extraction artifacts
+extracted/
+*.exe
+*.dll
+*.iso
+*.AppImage
+*.dmg
+*.pcap
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+env/
+venv/
+
+# Scratch & test scripts
+test_*.py
+scratch/
+
+# Reverse-engineering binaries (APK, Windows installer)
+android/
+windows/
+
+# IDE / Editor / Xcode
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.swiftpm/
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
