@@ -12,7 +12,7 @@ Language: **English** | [简体中文](README_ZH.md)
 
 > **Disclaimer & Note to WO Mic Developers**  
 > 1. **Unofficial Port**: This project is an independent open-source port and has no affiliation, sponsorship, or endorsement from Wolicheng Tech. **Please DO NOT ask the developers of WO Mic for help regarding this unofficial port.**  
-> 2. **To Developers of WO Mic**: We deeply appreciate Wolicheng Tech's work on WO Mic. This software is created solely for macOS interoperability research and personal convenience. If Wolicheng Tech does not approve of this port or has any concerns, please contact `noonyjufee@gmail.com`. The repository will be immediately taken down upon request.  
+> 2. **To Developers of WO Mic**: We deeply appreciate Wolicheng Tech's work on WO Mic. This software is created solely for macOS interoperability research and personal convenience. If Wolicheng Tech does not approve of this port or has any concerns, please contact `noonyufei@gmail.com`. The repository will be immediately taken down upon request.  
 > 3. **Trademarks**: All trademarks, brand names, and protocol copyrights related to WO Mic belong to Wolicheng Tech.
 
 
